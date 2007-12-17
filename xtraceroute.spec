@@ -13,7 +13,6 @@ Source10: %{name}.16.png
 Source11: %{name}.32.png
 Source12: %{name}.48.png
 URL: http://www.beebgames.com/sw/gtk-ports.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: autoconf2.5
 BuildRequires: libgdk_pixbuf2.0-devel
 BuildRequires: gtkglarea2-devel
