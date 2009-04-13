@@ -8,6 +8,7 @@ Source0:	http://www.beebgames.com/sw/%{name}-%{version}.tar.bz2
 Source10:	%{name}.16.png
 Source11:	%{name}.32.png
 Source12:	%{name}.48.png
+Patch0:		xtraceroute-0.9.2-linkage.patch
 URL:		http://www.beebgames.com/sw/gtk-ports.html
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgdk_pixbuf2.0-devel
@@ -18,6 +19,7 @@ BuildRequires:	bind-utils
 BuildRequires:	recode
 BuildRequires:	gettext-devel
 BuildRequires:	desktop-file-utils
+BuildRequires:	mesaglu-devel
 Requires:	traceroute
 Requires:	bind-utils
 
@@ -28,21 +30,21 @@ data files mentioned in the INSTALL document too.
 
 %prep
 %setup -q
+%patch0 -p0
 sed -i -e 's,%{name}.png,%{name},g' %{name}.desktop
 
 # otherwise autoreconf doesn't work - AdamW 2008/01
 cp %{_datadir}/gettext/config.rpath .
 
-autoreconf
-
 %build
+autoreconf -fi
 %configure2_5x
 make
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_datadir}/pixmaps
-%makeinstall xtraceroutedatadir=%{?buildroot:%{buildroot}}%{_datadir}/%{name}
+%makeinstall_std
 
 install xtraceroute.png %{buildroot}%{_datadir}/pixmaps
 touch %{buildroot}%{_datadir}/xtraceroute/hosts.cache
