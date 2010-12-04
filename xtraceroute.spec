@@ -9,6 +9,7 @@ Source10:	%{name}.16.png
 Source11:	%{name}.32.png
 Source12:	%{name}.48.png
 Patch0:		xtraceroute-0.9.2-linkage.patch
+Patch1:		xtraceroute-0.9.2-fix-build.patch
 URL:		http://www.beebgames.com/sw/gtk-ports.html
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgdk_pixbuf2.0-devel
@@ -31,6 +32,7 @@ data files mentioned in the INSTALL document too.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
 sed -i -e 's,%{name}.png,%{name},g' %{name}.desktop
 
 # otherwise autoreconf doesn't work - AdamW 2008/01
