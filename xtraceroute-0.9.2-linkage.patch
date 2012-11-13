@@ -1,0 +1,11 @@
+--- configure.in~	2003-09-09 20:30:05.000000000 +0200
++++ configure.in	2009-04-13 10:16:55.000000000 +0200
+@@ -157,7 +157,7 @@
+ 	AC_MSG_ERROR([Missing gtkglarea-2.0 library])
+ else	
+ 	CFLAGS="$CFLAGS -I/usr/include/gtkgl-2.0/"
+-	LIBS="$LIBS -lgtkgl-2.0"
++	LIBS="$LIBS -lgtkgl-2.0 -lGLU"
+ fi
+ dnl AM_PATH_GTKGL([LIBS="$LIBS $GTKGL_LIBS" CFLAGS="$CFLAGS $GTKGL_CFLAGS"],
+ dnl 		 AC_MSG_ERROR([Cannot find proper gtkgl version]))
