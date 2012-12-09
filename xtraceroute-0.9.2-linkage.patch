@@ -5,7 +5,7 @@
  else	
  	CFLAGS="$CFLAGS -I/usr/include/gtkgl-2.0/"
 -	LIBS="$LIBS -lgtkgl-2.0"
-+	LIBS="$LIBS -lgtkgl-2.0 -lGLU"
++	LIBS="$LIBS -lgtkgl-2.0 -lGL -lGLU -lm"
  fi
  dnl AM_PATH_GTKGL([LIBS="$LIBS $GTKGL_LIBS" CFLAGS="$CFLAGS $GTKGL_CFLAGS"],
  dnl 		 AC_MSG_ERROR([Cannot find proper gtkgl version]))
