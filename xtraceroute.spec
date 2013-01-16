@@ -1,7 +1,7 @@
 Summary:	Graphical OpenGL version of traceroute
 Name:		xtraceroute
 Version:	0.9.2
-Release:	11
+Release:	12
 License:	GPLv2+
 Group:		Monitoring
 Source0:	http://www.beebgames.com/sw/%{name}-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source11:	%{name}.32.png
 Source12:	%{name}.48.png
 Patch0:		xtraceroute-0.9.2-linkage.patch
 Patch1:		xtraceroute-0.9.2-fix-build.patch
+Patch2:		xtraceroute-automake-1.13.patch
 URL:		http://www.beebgames.com/sw/gtk-ports.html
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gtkgl-2.0)
@@ -32,6 +33,7 @@ data files mentioned in the INSTALL document too.
 %setup -q
 %patch0 -p0
 %patch1 -p0
+%patch2 -p1 -b .am13~
 sed -i -e 's,%{name}.png,%{name},g' %{name}.desktop
 
 # otherwise autoreconf doesn't work - AdamW 2008/01
@@ -40,7 +42,7 @@ cp %{_datadir}/gettext/config.rpath .
 %build
 autoreconf -fi
 %configure2_5x
-make
+%make
 
 %install
 mkdir -p %{buildroot}/%{_datadir}/pixmaps

@@ -1,0 +1,11 @@
+--- xtraceroute-0.9.2/configure.in.bero	2013-01-16 04:12:16.368257779 +0100
++++ xtraceroute-0.9.2/configure.in	2013-01-16 04:12:22.507184767 +0100
+@@ -10,7 +10,7 @@ AC_PROG_MAKE_SET
+ AM_INIT_AUTOMAKE(xtraceroute, 0.9.2)
+ 
+ dnl Specify a header configuration file
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ dnl Checks for programs.
+ AC_PROG_CC
