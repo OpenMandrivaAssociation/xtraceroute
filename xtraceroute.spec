@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Summary:	Graphical OpenGL version of traceroute
 Name:		xtraceroute
 Version:	0.9.2
