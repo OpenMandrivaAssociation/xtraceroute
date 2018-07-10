@@ -3,7 +3,7 @@
 Summary:	Graphical OpenGL version of traceroute
 Name:		xtraceroute
 Version:	0.9.2
-Release:	20
+Release:	21
 License:	GPLv2+
 Group:		Monitoring
 Source0:	http://www.beebgames.com/sw/%{name}-%{version}.tar.bz2
