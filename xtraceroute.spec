@@ -13,7 +13,7 @@ Source12:	%{name}.48.png
 Patch0:		xtraceroute-0.9.2-linkage.patch
 Patch1:		xtraceroute-0.9.2-fix-build.patch
 Patch2:		xtraceroute-automake-1.13.patch
-URL:		http://www.beebgames.com/sw/gtk-ports.html
+URL:		https://www.beebgames.com/sw/gtk-ports.html
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gtkgl-2.0)
 BuildRequires:	pkgconfig(gl)
