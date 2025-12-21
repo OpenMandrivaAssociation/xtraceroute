@@ -14,6 +14,11 @@ Patch0:		xtraceroute-0.9.2-linkage.patch
 Patch1:		xtraceroute-0.9.2-fix-build.patch
 Patch2:		xtraceroute-automake-1.13.patch
 URL:		https://www.beebgames.com/sw/gtk-ports.html
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gtkgl-2.0)
 BuildRequires:	pkgconfig(gl)
